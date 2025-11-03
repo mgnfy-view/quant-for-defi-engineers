@@ -43,8 +43,8 @@ venv.bak/
 *.ipynb
 
 # Data files (uncomment if you don't want to track data)
-# data/raw/*.csv
-# data/processed/*.csv
+data/raw/*.csv
+data/processed/*.csv
 
 # Output files
 outputs/plots/*.png
