@@ -4,7 +4,7 @@ Data loading and preprocessing module
 
 import pandas as pd
 from constants import BASIS_POINTS
-from config import TIMESTAMP_COL, PRICE_COL, CONF_COL
+from config import TIMESTAMP_COL, PRICE_COL, CONF_COL, CONF_VAR_COL
 
 
 def load_pyth_data(file_path):
@@ -84,8 +84,6 @@ def downsize_processed_data(df, target_size, window_size):
     pandas.DataFrame
         Downsized DataFrame with high-variance periods preserved
     """
-
-    CONF_VAR_COL = "confVariance"
 
     # Calculate rolling variance of confidence
     df[CONF_VAR_COL] = df[CONF_COL].rolling(window=window_size, center=True).var()
